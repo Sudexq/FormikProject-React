@@ -1,6 +1,8 @@
 import * as yup from "yup";
 const passwordRules = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{5,}$/; //şifre kurralları için özel karakter girilmesin diye uyarı verecek
 
+//ana sayfa
+
 export const basicSchema = yup.object().shape({
   email: yup
     .string()
@@ -22,4 +24,22 @@ export const basicSchema = yup.object().shape({
     .string()
     .oneOf([yup.ref("password")], "Şifreler aynı değil")
     .required("Tekrar şifre girilmesi zorunludur"),
+});
+
+//portal sayfası
+
+export const advancedSchema = yup.object().shape({
+  userName: yup
+    .string()
+    .min(3, "Minumum 3 karakter giriniz")
+    .required("Kullanıcı Adı girmek zorunludur"),
+  university: yup
+    .string()
+    .oneOf(
+      ["itu", "odtu", "bogazici", "kultur"],
+      "lütfen üniversitenizi seçiniz"
+    )
+    .required("Üniversite girmek zorunludur"),
+  isAcepted: yup
+    .boolean().oneOf([true],"kullanım koşullarını kabul ediniz")
 });
