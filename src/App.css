@@ -1,3 +1,67 @@
 .App {
-  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
 }
+form{
+  width: 500px;
+}
+
+form label{
+font-size: 16px;
+font-weight: bold;
+}
+
+.inputDiv{
+  margin-bottom: 10px;
+}
+
+.inputDiv input{
+  width:100%;
+  padding: 8px 7px;
+  font-size: 16px;
+  border: 1px solid rgb(128, 133, 142);
+  border-radius: 2vh;
+  background-color: rgb(67, 76, 91);
+  color:white;
+  outline: none;
+  margin: 5px 0px;
+}
+
+input::placeholder{
+  color:lightgray;
+}
+
+input:focus{
+  border-color: lightblue;
+}
+
+button{
+  background-color: rgb(0, 168, 0);
+  width: 100%;
+  padding: 8px 7px;
+  color:white;
+  outline: none;
+  margin: 10px 0px;
+  font-size: 16px;
+  cursor: pointer;
+  border: none;
+  border-radius: 2vh;
+}
+button:focus{
+  background-color: green;
+  transition: 0.5s all;
+}
+
+/* error */
+.inputDiv .input-error{
+  border-color: #fc8181;
+}
+.error{
+  font-size: 12px;
+  color:#fc8181;
+  margin-top: -15px;
+  text-align: left;
+}
+/* error */
